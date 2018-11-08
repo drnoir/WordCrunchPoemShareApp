@@ -1,0 +1,41 @@
+body{  
+color:black;
+background-color:black;
+}
+
+.poemarea{
+height:500px;    
+z-index:1;
+}
+
+.whitebg{
+background-color:white;
+border-radius:15px;
+margin-top:25px;
+}
+
+.right{
+float:right;
+margin:10px;    
+}
+
+#canvas{
+position:absolute;
+z-index:0;
+width:100%;
+}
+
+#poem{
+float:left;
+font-size:1.5em;
+position: absolute;
+margin: 0 auto;
+background-color: white;
+opacity: 0.9;
+width:40%;
+min-height:60%;
+padding:20px;
+border-radius:20px;
+margin-top:100px;
+left:100px;
+}
