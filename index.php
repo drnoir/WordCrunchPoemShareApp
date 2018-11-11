@@ -20,6 +20,16 @@
     <div class = "row-fluid">
       
         <form action="poem.php" method="post">
+
+        <div class="form-group">
+        <select class="form-control" name="canvas-render">
+            <option value="canvas">Cubes</option>
+            <option value="matrix">GlitchMash</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+        </div>
             <div class="form-group">
               <label for="name">Your Name</label>
               <input type="name" class="form-control" id="name" placeholder="Name" name="name">
@@ -35,6 +45,7 @@
                 <textarea class="form-control" rows="20" id="poemarea" name="poemarea"></textarea>
             </div>
 
+          
             <button type="submit" class="btn btn-default" onclick="PoetryForm()">Submit</button>
           </form>
   </div>
@@ -45,5 +56,14 @@
   </body>
   <script src="js/three.min.js"></script>
   <script src="js/jquery-3.3.1.min.js"></script>
-  <script src="js/canvas.js"></script>
+  
+	<script src="js/shader/CopyShader.js"></script>
+		<script src="js/shader/DigitalGlitch.js"></script>
+
+		<script src="js/postprocessing/EffectComposer.js"></script>
+		<script src="js/postprocessing/RenderPass.js"></script>
+		<script src="js/postprocessing/MaskPass.js"></script>
+		<script src="js/postprocessing/ShaderPass.js"></script>
+		<script src="js/postprocessing/GlitchPass.js"></script>
+ 
 </html>  

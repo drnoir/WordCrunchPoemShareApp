@@ -25,5 +25,14 @@
   </body>
   <script src="js/three.min.js"></script>
   <script src="js/jquery-3.3.1.min.js"></script>
-  <script src="js/canvas.js"></script>
+  <script src="js/<?php echo $_POST["canvas-render"]; ?>.js"></script>
+  
+	<script src="js/shader/CopyShader.js"></script>
+		<script src="js/shader/DigitalGlitch.js"></script>
+
+		<script src="js/postprocessing/EffectComposer.js"></script>
+		<script src="js/postprocessing/RenderPass.js"></script>
+		<script src="js/postprocessing/MaskPass.js"></script>
+		<script src="js/postprocessing/ShaderPass.js"></script>
+		<script src="js/postprocessing/GlitchPass.js"></script>
 </html>  
