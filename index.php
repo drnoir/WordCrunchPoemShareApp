@@ -25,7 +25,7 @@
         <select class="form-control" name="canvas-render">
             <option value="canvas">Cubes</option>
             <option value="matrix">GlitchMash</option>
-            <option>3</option>
+            <option value="cubes2">Cubes Pysch</option>
             <option>4</option>
             <option>5</option>
           </select>
@@ -65,5 +65,6 @@
 		<script src="js/postprocessing/MaskPass.js"></script>
 		<script src="js/postprocessing/ShaderPass.js"></script>
 		<script src="js/postprocessing/GlitchPass.js"></script>
+    <script src='https://code.responsivevoice.org/responsivevoice.js'></script>
  
 </html>  

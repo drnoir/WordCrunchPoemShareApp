@@ -6,9 +6,9 @@ function PoetryForm() {
 
 var width = window.innerWidth;
 var height = window.innerHeight;
-var viewAngle = 45;
+var viewAngle = 90;
 var nearClipping = 0.1;
-var farClipping = 9999;
+var farClipping = 555;
 var scene = new THREE.Scene();
 var camera = new THREE.PerspectiveCamera( viewAngle, width / height, nearClipping, farClipping );
 var renderer = new THREE.WebGLRenderer();
@@ -29,6 +29,8 @@ document.body.appendChild(container);
 
 renderer = new THREE.WebGLRenderer();
 renderer.setSize( width, height );
+var scene = new THREE.Scene(); // initialising the scene
+scene.background = new THREE.Color( 0x228B22 );
 
 container.appendChild( renderer.domElement );
 
@@ -66,9 +68,9 @@ function animate() {
   
   } );
 
-  var geometry = new THREE.BoxBufferGeometry( 10, 10, 10);
-				for ( var i = 0; i < 500; i ++ ) {
-					var object = new THREE.Mesh( geometry, new THREE.MeshLambertMaterial( { color:  0x0ffffff } ) );
+  var geometry = new THREE.BoxBufferGeometry( 5, 5, 5);
+				for ( var i = 0; i < 4000; i ++ ) {
+					var object = new THREE.Mesh( geometry, new THREE.MeshLambertMaterial( { color:  0x0ff0000 } ) );
 					object.position.x = Math.random() * 800 - 400;
 					object.position.y = Math.random() * 800 - 400;
 					object.position.z = Math.random() * 800 - 400;
@@ -82,9 +84,9 @@ function animate() {
         }
         
 
-  var light = new THREE.PointLight(0xFFFFFF);
+  var light = new THREE.PointLight(0xFFFF33);
 light.position.x = 0;
-light.position.y = 10;
+light.position.y = 6;
 light.position.z = 0;
 scene.add(light);
 
