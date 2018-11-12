@@ -16,7 +16,7 @@ background-image: url("paper.jpg");
 }
 
 .whitebg{
-background-color:white;
+background-color:lightseagreen;   
 border-radius:15px;
 margin-top:25px;
 }
@@ -42,8 +42,8 @@ background-image: url("../paper.jpg");
 
 width:40%;
 min-height:60%;
-padding:20px;
+padding:10px;
 border-radius:10px;
-margin-top:100px;
+margin-top:50px;
 left:100px;
 }

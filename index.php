@@ -19,7 +19,7 @@
     <h3>Send a 3D poem to a friend</h3>
     <p>Fill in the form below with a poem of your own or a well known poem and WordCrunch will
       render a 3D scene with your poem to share with a friend</p>
-    <div class = "row-fluid">
+    <div class = "row-fluid formbg">
       
         <form action="poem.php" method="post">
 

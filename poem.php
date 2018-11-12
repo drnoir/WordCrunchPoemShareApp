@@ -48,7 +48,7 @@
         $(document).ready(function() {
         $("#TextToSpeech").click(function(){
           console.log("eventfired", poem);
-          responsiveVoice.speak(poem, "UK English Male", {pitch: 0.8},{rate: 0.9});
+          responsiveVoice.speak(poem, "UK English Male", {pitch: 0.8},{rate: 0.7});
         })
       }); 
     </script>
