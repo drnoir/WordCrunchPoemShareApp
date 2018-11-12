@@ -6,14 +6,19 @@
     <title>title</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/custum.css">
-
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Archivo+Narrow|Lobster" rel="stylesheet">
+    <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
   </head>
   <body>
    <div id ="canvas">
     
     <div id = "poem">
       <h1><?php echo $_POST["poemtitle"]; ?></h1>
-      <p><?php echo $_POST["poemarea"]; ?></p>
+      <p id = "poemarea"><?php echo $_POST["poemarea"]; ?></p>
       <h2>Poem chosen by <?php echo $_POST["name"]; ?></h2>
       <div class = "row"></div>
     <button type="button" class="btn btn-secondary btn-lg">Send Poem</button>
@@ -25,7 +30,6 @@
    </div>
 
   </body>
-  <script src="js/jquery-3.3.1.min.js"></script>
   <script src="js/three.min.js"></script>
   <script src="js/<?php echo $_POST["canvas-render"]; ?>.js"></script>
   
@@ -38,6 +42,15 @@
 		<script src="js/postprocessing/ShaderPass.js"></script>
 		<script src="js/postprocessing/GlitchPass.js"></script>
     <script src='https://code.responsivevoice.org/responsivevoice.js'></script>
-    <script src="js/voice.js"></script>
+    <script>
+        var poem = $("#poemarea").html();
+
+        $(document).ready(function() {
+        $("#TextToSpeech").click(function(){
+          console.log("eventfired", poem);
+          responsiveVoice.speak(poem, "UK English Male", {pitch: 0.8},{rate: 0.9});
+        })
+      }); 
+    </script>
 </html>  
 

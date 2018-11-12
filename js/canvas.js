@@ -66,7 +66,7 @@ function animate() {
   
   } );
 
-  var geometry = new THREE.BoxBufferGeometry( 50, 50, 50);
+  var geometry = new THREE.BoxBufferGeometry( 30, 30, 30);
 				for ( var i = 0; i < 500; i ++ ) {
 					var object = new THREE.Mesh( geometry, new THREE.MeshLambertMaterial( { color:  0x0ffffff } ) );
 					object.position.x = Math.random() * 800 - 400;

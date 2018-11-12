@@ -1,6 +1,12 @@
 body{  
 color:black;
 background-color:black;
+font-family: 'Archivo Narrow', sans-serif;
+font-size: 2em;
+}
+
+h1{
+    font-family: 'Lobster', cursive;
 }
 
 .poemarea{

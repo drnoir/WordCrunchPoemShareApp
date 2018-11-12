@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/custum.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Archivo+Narrow|Lobster" rel="stylesheet">
   </head>
   <body>
   <div id = "container">
@@ -22,6 +24,7 @@
         <form action="poem.php" method="post">
 
         <div class="form-group">
+        <label for="name">Choose your 3D Background</label>
         <select class="form-control" name="canvas-render">
             <option value="canvas">Cubes</option>
             <option value="matrix">GlitchMash</option>
