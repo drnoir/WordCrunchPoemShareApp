@@ -18,7 +18,7 @@
     
     <div id = "poem">
       <h1><?php echo $_POST["poemtitle"]; ?></h1>
-      <p id = "poemarea"><?php echo $_POST["poemarea"]; ?></p>
+      <p id = "poemarea"><?php echo nl2br ($_POST ["poemarea"]); ?></p>
       <h2>Poem chosen by <?php echo $_POST["name"]; ?></h2>
       <div class = "row"></div>
     <button type="button" class="btn btn-secondary btn-lg">Send Poem</button>
@@ -43,7 +43,7 @@
 		<script src="js/postprocessing/GlitchPass.js"></script>
     <script src='https://code.responsivevoice.org/responsivevoice.js'></script>
     <script>
-        var poem = $("#poemarea").html();
+        var poem = $("#poemarea").text();
 
         $(document).ready(function() {
         $("#TextToSpeech").click(function(){
