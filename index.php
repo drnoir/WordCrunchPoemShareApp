@@ -1,4 +1,26 @@
+<?php 
+include("db/conn.php"); 
 
+//Select total number of poems from db
+$totalpoems= "SELECT * FROM poems";
+if ($conn->query($totalpoems) >0) {
+  echo "Records in DB";
+} else {
+  echo "Error: " . $sql . "<br>" . $conn->error;
+}
+
+// $userInput = "";
+// if (isset($_POST["poem_id"]))
+// {
+//     $userInput = $_POST["poem_id"];
+//     header("Location: poem.php?id=".$poem_id.""); 
+// }
+// else
+// {
+//     header("Location: error.php");  
+// }
+
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -21,7 +43,7 @@
       render a 3D scene with your poem to share with a friend</p>
     <div class = "row-fluid formbg">
       
-        <form action="poem.php" method="post">
+        <form action="poem.php?id='<?php echo $_GET['poem_id'];?>'" method="post">
 
         <div class="form-group">
         <label for="name">Choose your 3D Background</label>
@@ -29,9 +51,14 @@
             <option value="canvas">Cubes</option>
             <option value="matrix">GlitchMash</option>
             <option value="cubes2">Cubes Pysch</option>
-            <option>4</option>
+            <option value ="reflections">Reflecting Spheres</option>
             <option>5</option>
           </select>
+        </div>
+        <div class="form-group">
+        <label for "id">Give Your Poem a unique ID</label>
+        <input type="name" class="form-control" id="poem_id" placeholder="poem_id" name="poem_id">
+        <h3 id = "poemid"></h3>
         </div>
             <div class="form-group">
               <label for="name">Your Name</label>

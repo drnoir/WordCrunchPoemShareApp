@@ -16,6 +16,22 @@ var camera = new THREE.PerspectiveCamera( viewAngle, width / height, nearClippin
 var renderer = new THREE.WebGLRenderer();
 var loader = new THREE.FontLoader();
 var radius = 100, theta = 0;
+var spheres = [];
+
+if ( WEBGL.isWebGLAvailable() === false ) {
+    document.body.appendChild( WEBGL.getWebGLErrorMessage() );
+}
+var container;
+var camera, scene, renderer;
+var spheres = [];
+var mouseX = 0;
+var mouseY = 0;
+var windowHalfX = window.innerWidth / 2;
+var windowHalfY = window.innerHeight / 2;
+document.addEventListener( 'mousemove', onDocumentMouseMove, false );
+init();
+
+
 
 //Load background texture
 new THREE.TextureLoader();
@@ -43,48 +59,17 @@ function animate() {
   }
   animate();
 
-
-
-  loader.load( 'fonts/helvetiker_bold.typeface.json', function ( font ) {
-  
-      var textGeo = new THREE.TextGeometry( "Hello World", {
-  
-          font: font,
-  
-          size: 200,
-          height: 50,
-          curveSegments: 12,
-          color : 0x0ffffff,
-          bevelThickness: 2,
-          bevelSize: 5,
-          bevelEnabled: true
-  
-      } );
-  
-      var textMaterial = new THREE.MeshPhongMaterial( { color: 0x000000 } );
-  
-      var mesh = new THREE.Mesh( textGeo, textMaterial );
-      mesh.position.set( 40, 40, 40 );
-  
-      scene.add( mesh );
-  
-  } );
-
-  var geometry = new THREE.BoxBufferGeometry( 5, 5, 5);
-				for ( var i = 0; i < 4000; i ++ ) {
-					var object = new THREE.Mesh( geometry, new THREE.MeshLambertMaterial( { color:  0x0ff0000 } ) );
-					object.position.x = Math.random() * 800 - 400;
-					object.position.y = Math.random() * 800 - 400;
-					object.position.z = Math.random() * 800 - 400;
-					object.rotation.x = Math.random() * 2 * Math.PI;
-					object.rotation.y = Math.random() * 2 * Math.PI;
-					object.rotation.z = Math.random() * 2 * Math.PI;
-					object.scale.x = Math.random() + 0.5;
-					object.scale.y = Math.random() + 0.5;
-					object.scale.z = Math.random() + 0.5;
-					scene.add( object );
-        }
-        
+  var material = new THREE.MeshBasicMaterial( { color: 0xffffff, envMap: scene.background } );
+    var geometry = new THREE.SphereBufferGeometry( 5, 5, 5);
+            for ( var i = 0; i < 500; i ++ ) {
+                var mesh = new THREE.Mesh( geometry, material );
+                mesh.position.x = Math.random() * 10000 - 5000;
+                mesh.position.y = Math.random() * 10000 - 5000;
+                mesh.position.z = Math.random() * 10000 - 5000;
+                mesh.scale.x = mesh.scale.y = mesh.scale.z = Math.random() * 3 + 1;
+                scene.add( mesh );
+                spheres.push( mesh );
+            }
 
   var light = new THREE.PointLight(0xFFFF33);
 light.position.x = 0;

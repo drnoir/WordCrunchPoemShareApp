@@ -4,8 +4,11 @@ function PoetryForm() {
     console.log(poemtext);
 }
 
-var width = window.innerWidth;
-var height = window.innerHeight;
+
+var container = $("#container");
+var width = container.innerWidth;
+var height = container.innerHeight;
+
 var viewAngle = 45;
 var nearClipping = 0.1;
 var farClipping = 9999;

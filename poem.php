@@ -1,3 +1,27 @@
+<?php include("db/conn.php"); 
+
+
+//session variables 
+$poem_id = $_SESSION['poem_id'];
+$poem_title = [$_POST ["poemtitle"]];
+$poem_content=[$_POST ["poemarea"]];
+$username = [$_POST ["name"]];
+
+if(isset($_GET['poem_id'])){
+$pid =   $_GET['poem_id']; 
+
+$sql = "INSERT INTO poems (poem_id,poemtitle, poemcontent, username)
+VALUES ($poem_id, $poem_title, $poem_content, $username)";
+
+if ($conn->query($sql) === TRUE) {
+    echo "New poem record created successfully";
+} else {
+    echo "Error: " . $sql . "<br>" . $conn->error;
+}
+$conn->close();
+}
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -41,6 +65,7 @@
 		<script src="js/postprocessing/MaskPass.js"></script>
 		<script src="js/postprocessing/ShaderPass.js"></script>
 		<script src="js/postprocessing/GlitchPass.js"></script>
+		<script src="js/WebGL.js"></script>
     <script src='https://code.responsivevoice.org/responsivevoice.js'></script>
     <script>
         var poem = $("#poemarea").text();
@@ -53,4 +78,3 @@
       }); 
     </script>
 </html>  
-
