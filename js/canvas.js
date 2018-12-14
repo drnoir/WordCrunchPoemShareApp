@@ -18,12 +18,12 @@ var renderer = new THREE.WebGLRenderer();
 var loader = new THREE.FontLoader();
 var radius = 100, theta = 0;
 
-//Load background texture
-new THREE.TextureLoader();
-loader.load('/img/space.jpg' , function(texture)
-            {
-             scene.background = texture;  
-            });
+// //Load background texture FIX
+// new THREE.TextureLoader();
+// loader.load('../img/space.jpg' , function(texture)
+//             {
+//              scene.background = texture;  
+//             });
 
 
 renderer.setSize( width, height );
